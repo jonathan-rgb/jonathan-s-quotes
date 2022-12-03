@@ -9,7 +9,7 @@ env:
   AUTH_USER: ${{secrets.AUTH_USER}}
   AUTH_TOKEN: ${{secrets.AUTH_TOKEN}}
   MAIL_FROM: ${{secrets.MAIL_FROM}}
-  MAIL_TO: ${{secrets.MAIL_TO}}
+  MAIL_BCC: ${{secrets.MAIL_BCC}}
   NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
   NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
   FIREBASE_APIKEY: ${{secrets.FIREBASE_APIKEY}}
