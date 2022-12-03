@@ -64,7 +64,7 @@ const app = initializeApp(firebaseConfig);
 
   // send mail with defined transport object
   await transporter.sendMail({
-    from: "Jonathan's Quotes" + process.env.MAIL_FROM,
+    from: `Jonathan's Quotes` + process.env.MAIL_FROM,
     to: process.env.MAIL_TO,
     subject: "Today's Quote",
     text:
