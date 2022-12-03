@@ -6,14 +6,14 @@ on:
   workflow_dispatch:
   
 env:
-  AUTH_USER: ${{secret.AUTH_USER}}
-  AUTH_TOKEN: ${{secret.AUTH_TOKEN}}
-  MAIL_FROM: ${{secret.MAIL_FROM}}
-  MAIL_TO: ${{secret.MAIL_TO}}
-  NOTION_TOKEN: ${{secret.NOTION_TOKEN}}
-  NOTION_DATABASE_ID: ${{secret.NOTION_DATABASE_ID}}
-  FIREBASE_APIKEY: ${{secret.FIREBASE_APIKEY}}
-  FIREBASE_MESSAGE_SENDER_ID: ${{secret.FIREBASE_MESSAGE_SENDER_ID}}
+  AUTH_USER: ${{secrets.AUTH_USER}}
+  AUTH_TOKEN: ${{secrets.AUTH_TOKEN}}
+  MAIL_FROM: ${{secrets.MAIL_FROM}}
+  MAIL_TO: ${{secrets.MAIL_TO}}
+  NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
+  NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
+  FIREBASE_APIKEY: ${{secrets.FIREBASE_APIKEY}}
+  FIREBASE_MESSAGE_SENDER_ID: ${{secrets.FIREBASE_MESSAGE_SENDER_ID}}
 
 jobs:
   build:
