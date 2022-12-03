@@ -1,0 +1,37 @@
+name: Daily Quote
+
+on:
+  schedule:
+  - cron: "0 15 * * *"
+  workflow_dispatch:
+  
+env:
+  AUTH_USER: ${{secret.AUTH_USER}}
+  AUTH_TOKEN: ${{secret.AUTH_TOKEN}}
+  MAIL_FROM: ${{secret.MAIL_FROM}}
+  MAIL_TO: ${{secret.MAIL_TO}}
+  NOTION_TOKEN: ${{secret.NOTION_TOKEN}}
+  NOTION_DATABASE_ID: ${{secret.NOTION_DATABASE_ID}}
+  FIREBASE_APIKEY: ${{secret.FIREBASE_APIKEY}}
+  FIREBASE_MESSAGE_SENDER_ID: ${{secret.FIREBASE_MESSAGE_SENDER_ID}}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - run: npm ci
+    - run: node src/main.js
