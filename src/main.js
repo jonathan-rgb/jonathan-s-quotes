@@ -64,16 +64,17 @@ const app = initializeApp(firebaseConfig);
 
   // send mail with defined transport object
   await transporter.sendMail({
-    from: "Jonathan" + process.env.MAIL_FROM,
-    to: process.env.MAIL_TO,
+    from: "Jonathan's Quotes" + process.env.MAIL_FROM,
+    bcc: process.env.MAIL_BCC,
     subject: "Today's Quote",
     text:
       quote +
-      `ℹ️ If you are receiving this email it's 
+      `ℹ️ This quote was randomly selected for today. 
+    If you are receiving this email it's 
     because you have been selected to be a beta
     tester for Jonathan's Quotes program.
     This program aims to become a fundamel part
-    of a learing and space repetition routine. 
+    of a learing and space repetition routine.
     Original quote on Notion: ` +
       url +
       `Github repository: https://github.com/jonathan-rgb/jonathan-s-quotes`,
