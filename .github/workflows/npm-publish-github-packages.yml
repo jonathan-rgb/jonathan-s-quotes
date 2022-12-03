@@ -1,0 +1,26 @@
+name: Daily Quote
+
+on:
+  schedule:
+  - cron: "0 15 * * *"
+  workflow_dispatch:
+
+jobs:
+  send_emails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: node src/main.js
+        env:
+          AUTH_USER: ${{secret.AUTH_USER}}
+          AUTH_TOKEN: ${{secret.AUTH_TOKEN}}
+          MAIL_FROM: ${{secret.MAIL_FROM}}
+          MAIL_TO: ${{secret.MAIL_TO}}
+          NOTION_TOKEN: ${{secret.NOTION_TOKEN}}
+          NOTION_DATABASE_ID: ${{secret.NOTION_DATABASE_ID}}
+          FIREBASE_APIKEY: ${{secret.FIREBASE_APIKEY}}
+          FIREBASE_MESSAGE_SENDER_ID: ${{secret.FIREBASE_MESSAGE_SENDER_ID}}
