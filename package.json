@@ -1,0 +1,18 @@
+{
+  "name": "daily-quote_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.2",
+    "dotenv": "^16.0.3",
+    "firebase": "^9.14.0",
+    "nodemailer": "^6.8.0",
+    "notion": "^0.0.1"
+  }
+}
