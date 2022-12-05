@@ -85,6 +85,8 @@ const app = initializeApp(firebaseConfig);
       `<a href="` +
       url +
       `">
+      <p>Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
+      Rispondi alla mail se vuoi1</p>
       <p>Original quote on Notion</p></a>
       <p>ℹ️ If you are receiving this email it's 
     because you have been selected to be a beta
