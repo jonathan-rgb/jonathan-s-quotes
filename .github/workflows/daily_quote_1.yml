@@ -2,7 +2,7 @@ name: Send Daily Quote
 
 on:
   schedule:
-    - cron: "30 7 * * *"
+    - cron: "13 7 * * *"
   workflow_dispatch:
 
 env:
