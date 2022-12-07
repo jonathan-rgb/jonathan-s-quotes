@@ -70,7 +70,7 @@ const app = initializeApp(firebaseConfig);
     text:
       quote +
       `Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
-      Rispondi alla mail se vuoi!😁 
+      Rispondi alla mail se vuoi! 😁 
       ℹ️ This quote was randomly selected for today. 
     If you are receiving this email it's 
     because you have been selected to be a beta
