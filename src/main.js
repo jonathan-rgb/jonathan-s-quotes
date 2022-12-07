@@ -69,10 +69,8 @@ const app = initializeApp(firebaseConfig);
     subject: "Today's Quote",
     text:
       quote +
-      `
-      <p>Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
-      Rispondi alla mail se vuoi!😁</p>
-      
+      `Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
+      Rispondi alla mail se vuoi!😁 
       ℹ️ This quote was randomly selected for today. 
     If you are receiving this email it's 
     because you have been selected to be a beta
@@ -86,7 +84,9 @@ const app = initializeApp(firebaseConfig);
       `<h1>` +
       quote +
       `</h1>` +
-      `<a href="` +
+      `<p>Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
+      Rispondi alla mail se vuoi!😁</p>
+      <a href="` +
       url +
       `">
       <p>Original quote on Notion</p></a>
