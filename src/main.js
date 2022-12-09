@@ -68,17 +68,13 @@ const app = initializeApp(firebaseConfig);
     bcc: process.env.MAIL_BCC,
     subject: "Today's Quote",
     html:
-      `<h1>` +
-      quote +
-      `</h1>` +
-      `<p style="font-size: 24px>Se rispondi a questa mail mi arriva il tuo messaggio! Fammi sapere in che modo ha influenzato la tua giornata.</p>
-      <a href="` +
+      `<a style="text-decoration: none" href="` +
       url +
-      `">
-      <p style="font-size: 16px">Original quote on Notion</p></a>
-    <a href=
-    "https://github.com/jonathan-rgb/jonathan-s-quotes"
-    ><p style="font-size: 8px">Github repository</p></a>`,
+      `"><h1>` +
+      quote +
+      `"</h1></a>
+      <p style="font-size: 18px">Se rispondi a questa mail mi arriva il tuo messaggio! 
+      Fammi sapere in che modo ha influenzato la tua giornata.✨</p>`,
   });
 
   console.log("Email sent!");
