@@ -70,7 +70,7 @@ const app = initializeApp(firebaseConfig);
     html:
       `<a style="text-decoration: none" href="` +
       url +
-      `"><h1>` +
+      `"><h1>"` +
       quote +
       `"</h1></a>
       <p style="font-size: 18px">Se rispondi a questa mail mi arriva il tuo messaggio! 
