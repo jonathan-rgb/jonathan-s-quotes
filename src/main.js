@@ -67,37 +67,18 @@ const app = initializeApp(firebaseConfig);
     from: "Jonathan's Quotes" + process.env.MAIL_FROM,
     bcc: process.env.MAIL_BCC,
     subject: "Today's Quote",
-    text:
-      quote +
-      `Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
-      Rispondi alla mail se vuoi! 😁 
-      ℹ️ This quote was randomly selected for today. 
-    If you are receiving this email it's 
-    because you have been selected to be a beta
-    tester for Jonathan's Quotes program.
-    This program aims to become a fundamel part
-    of a learing and space repetition routine.
-    Original quote on Notion: ` +
-      url +
-      `Github repository: https://github.com/jonathan-rgb/jonathan-s-quotes`,
     html:
       `<h1>` +
       quote +
       `</h1>` +
-      `<p>Mi piacerebbe sapere a cosa ti fa pensare questa citazione. 
-      Rispondi alla mail se vuoi!😁</p>
+      `<p style="font-size: 24px>Se rispondi a questa mail mi arriva il tuo messaggio! Fammi sapere in che modo ha influenzato la tua giornata.</p>
       <a href="` +
       url +
       `">
-      <p>Original quote on Notion</p></a>
-      <p>ℹ️ If you are receiving this email it's 
-    because you have been selected to be a beta
-    tester for Jonathan's Quotes program.
-    This program aims to become a fundamel part
-    of a learing and space repetition routine.</p>
+      <p style="font-size: 16px">Original quote on Notion</p></a>
     <a href=
     "https://github.com/jonathan-rgb/jonathan-s-quotes"
-    >Github repository</a>`,
+    ><p style="font-size: 8px">Github repository</p></a>`,
   });
 
   console.log("Email sent!");
