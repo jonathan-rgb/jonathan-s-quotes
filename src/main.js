@@ -41,7 +41,6 @@ const app = initializeApp(firebaseConfig);
   
   console.log(quoteResponse);
   const quote = quoteResponse.properties.Quote.title[0].plain_text;
-  const author = quoteResponse.properties.Authors.plain_text;
   const url = quoteResponse.url;
 
   console.log("Copying to Firebase...");
@@ -75,9 +74,6 @@ const app = initializeApp(firebaseConfig);
       `"><h1>"` +
       quote +
       `"</h1></a>
-      <h3>"` +
-      author +
-      `"</h3>
       <p style="font-size: 18px">Se rispondi a questa mail mi arriva il tuo messaggio! 
       Fammi sapere in che modo ha influenzato la tua giornata.✨</p>`,
   });
