@@ -40,6 +40,7 @@ const app = initializeApp(firebaseConfig);
   });
 
   const quote = quoteResponse.properties.Quote.title[0].plain_text;
+  const author = quoteResponse.properties.Authors.title[0].plain_text;
   const url = quoteResponse.url;
   //   console.log(quoteResponse);
 
@@ -74,6 +75,9 @@ const app = initializeApp(firebaseConfig);
       `"><h1>"` +
       quote +
       `"</h1></a>
+      <h1>"` +
+      author +
+      `"</h1>
       <p style="font-size: 18px">Se rispondi a questa mail mi arriva il tuo messaggio! 
       Fammi sapere in che modo ha influenzato la tua giornata.✨</p>`,
   });
