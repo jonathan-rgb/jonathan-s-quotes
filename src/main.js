@@ -41,7 +41,7 @@ const app = initializeApp(firebaseConfig);
   
   console.log(quoteResponse);
   const quote = quoteResponse.properties.Quote.title[0].plain_text;
-  const author = quoteResponse.properties.Authors.title[0].text;
+  const author = quoteResponse.properties.Authors.plain_text;
   const url = quoteResponse.url;
 
   console.log("Copying to Firebase...");
