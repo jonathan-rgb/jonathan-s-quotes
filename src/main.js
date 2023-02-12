@@ -38,11 +38,11 @@ const app = initializeApp(firebaseConfig);
   const quoteResponse = await notion.pages.retrieve({
     page_id: id,
   });
-
+  
+  console.log(quoteResponse);
   const quote = quoteResponse.properties.Quote.title[0].plain_text;
   const author = quoteResponse.properties.Authors.title[0].text;
   const url = quoteResponse.url;
-  //   console.log(quoteResponse);
 
   console.log("Copying to Firebase...");
 
