@@ -38,10 +38,14 @@ const app = initializeApp(firebaseConfig);
   const quoteResponse = await notion.pages.retrieve({
     page_id: id,
   });
-  
+
   console.log(quoteResponse);
   const quote = quoteResponse.properties.Quote.title[0].plain_text;
   const url = quoteResponse.url;
+  const rawAuthor =
+    quoteResponse.properties["Authors as string [bulk copypasted]"]
+      .rich_text[0];
+  const author = rawAuthor ? rawAuthor.plain_text : "";
 
   console.log("Copying to Firebase...");
 
@@ -63,19 +67,27 @@ const app = initializeApp(firebaseConfig);
     },
   });
 
+  const htmlMailContent = `
+    <a style="text-decoration: none" href="${url}">
+      <h1>
+        "${quote}"
+      </h1>
+    </a>
+    <small> - ${author}</small>
+    <p style="font-size: 18px">
+      Se rispondi a questa mail mi arriva il tuo messaggio!
+      Fammi sapere in che modo ha influenzato la tua giornata.✨
+    </p>
+  `;
+
+  console.log(htmlMailContent);
+
   // send mail with defined transport object
   await transporter.sendMail({
     from: "Jonathan's Quotes" + process.env.MAIL_FROM,
     bcc: process.env.MAIL_BCC,
     subject: "Today's Quote",
-    html:
-      `<a style="text-decoration: none" href="` +
-      url +
-      `"><h1>"` +
-      quote +
-      `"</h1></a>
-      <p style="font-size: 18px">Se rispondi a questa mail mi arriva il tuo messaggio! 
-      Fammi sapere in che modo ha influenzato la tua giornata.✨</p>`,
+    html: htmlMailContent,
   });
 
   console.log("Email sent!");
