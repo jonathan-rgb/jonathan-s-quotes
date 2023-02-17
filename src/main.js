@@ -73,8 +73,8 @@ const app = initializeApp(firebaseConfig);
         "${quote}"
       </h1>
     </a>
-    <small> - ${author}</small>
-    <p style="font-size: 18px">
+    <h3> - ${author}</h3>
+    <p style="font-size: 16px">
       Se rispondi a questa mail mi arriva il tuo messaggio!
       Fammi sapere in che modo ha influenzato la tua giornata.✨
     </p>
