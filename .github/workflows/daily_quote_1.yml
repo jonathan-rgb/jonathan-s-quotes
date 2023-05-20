@@ -1,8 +1,8 @@
 name: Send Daily Quote
 
 on:
-  schedule:
-    - cron: "13 7 * * *"
+#   schedule:
+#     - cron: "13 7 * * *"
   workflow_dispatch:
 
 env:
